@@ -1,4 +1,4 @@
-﻿using BobMarley.Domain.Interfaces.Repositories.Mongo;
+﻿using BobMarley.Domain.Interfaces.Repositories;
 using MongoDB.Driver;
 
 namespace BobMarley.Infra.Context
@@ -20,7 +20,8 @@ namespace BobMarley.Infra.Context
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            ClientSession?.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }

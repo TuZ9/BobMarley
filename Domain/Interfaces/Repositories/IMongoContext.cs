@@ -1,6 +1,4 @@
-﻿
-
-namespace BobMarley.Domain.Interfaces.Repositories.Mongo
+﻿namespace BobMarley.Domain.Interfaces.Repositories
 {
     public interface IMongoContext : IDisposable
     {
