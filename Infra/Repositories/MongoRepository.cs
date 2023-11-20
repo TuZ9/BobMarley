@@ -11,9 +11,9 @@ namespace BobMarley.Infra.Repositories
         protected IMongoCollection<TEntity> _dbSet;
         protected readonly ILogger<YEntity> _logger;
 
-        protected MongoRepository(MongoContext _context, ILogger<YEntity> logger)
+        protected MongoRepository(MongoContext context, ILogger<YEntity> logger)
         {
-            _context = _context;
+            _context = context;
             _logger = logger;
             _dbSet = _context.Database.GetCollection<TEntity>(typeof(TEntity).Name);
         }
@@ -36,7 +36,7 @@ namespace BobMarley.Infra.Repositories
                 _dbSet.InsertManyAsync(objs);
                 return Task.CompletedTask;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -74,6 +74,59 @@ namespace BobMarley.Infra.Repositories
             }
         }
 
+        public async Task CreateIndexAsync(string fieldName)
+        {
+            try
+            {
+                var options = new CreateIndexOptions { Unique = true };
+
+                await _dbSet.Indexes.CreateOneAsync($"{{ {fieldName} : 1 }}");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Erro Create Index Collection Mongo");
+                Dispose();
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAll()
+        {
+            try
+            {
+                var all = await _dbSet.Find(Builders<TEntity>.Filter.Empty)
+                    .ToListAsync();
+
+                Dispose();
+                return all.ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Erro GetAll");
+                Dispose();
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAllPagted(int page, int pageSize)
+        {
+            try
+            {
+                var all = await _dbSet.Find(Builders<TEntity>.Filter.Empty)
+                    .Skip((page - 1) * pageSize)
+                    .Limit(pageSize)
+                    .ToListAsync();
+
+                Dispose();
+                return all.ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Erro GetAll");
+                Dispose();
+                throw new Exception(ex.Message);
+            }
+        }
         public void Dispose()
         {
             _context.Dispose();

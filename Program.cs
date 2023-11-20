@@ -1,5 +1,4 @@
-﻿using BobMarley.Infra.Ioc;
-using BobMarley.Infra.Ioc.Serilog;
+﻿using BobMarley.Infra.Ioc.Serilog;
 using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
