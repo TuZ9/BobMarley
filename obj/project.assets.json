@@ -3207,11 +3207,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\BobMarley\\BobMarley.csproj",
+      "projectUniqueName": "C:\\GitHub\\BobMarley\\BobMarley.csproj",
       "projectName": "BobMarley",
-      "projectPath": "C:\\Github\\BobMarley\\BobMarley.csproj",
+      "projectPath": "C:\\GitHub\\BobMarley\\BobMarley.csproj",
       "packagesPath": "C:\\Users\\arthu\\.nuget\\packages\\",
-      "outputPath": "C:\\Github\\BobMarley\\obj\\",
+      "outputPath": "C:\\GitHub\\BobMarley\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\arthu\\AppData\\Roaming\\NuGet\\NuGet.Config",
