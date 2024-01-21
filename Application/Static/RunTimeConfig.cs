@@ -6,10 +6,10 @@ namespace BobMarley.Application.Static
 {
     public static class RunTimeConfig
     {
-        public static string Auroraconnection = "";
-        public static string Mongoconnection = "";
+        public static string? Auroraconnection = "";
+        public static string? Mongoconnection = "";
 
-        public static void SetCOnfigs(ConfigurationManager configuration)
+        public static void SetConfigs(ConfigurationManager configuration)
         {
             if (Debugger.IsAttached)
             {

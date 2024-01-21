@@ -42,7 +42,7 @@ namespace BobMarley.Infra.Repositories
             }
         }
 
-        public async Task DropCollection(string collectionName)
+        public void DropCollection(string collectionName)
         {
             _dbSet.Database.DropCollection(collectionName);
         }

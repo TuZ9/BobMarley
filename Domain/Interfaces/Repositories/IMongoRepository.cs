@@ -4,7 +4,7 @@ namespace BobMarley.Domain.Interfaces.Repositories
 {
     public interface IMongoRepository<TEntity> : IDisposable where TEntity : class
     {
-        Task DropCollection(string collectionName);
+        void DropCollection(string collectionName);
         Task Update(List<TEntity> objs);
         Task<TEntity> GetAsync(string field, string value);
         Task InsertBulk(IEnumerable<WriteModel<TEntity>> obj);

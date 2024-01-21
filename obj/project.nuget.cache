@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "erJO5HM6KzkiFErxkZR7ISFgm52/wgICYpaem4yM+qgbOAZS88qJY/MjhjPhubxk0bftN4NIQQ4koY17Vp8taQ==",
+  "dgSpecHash": "p4COfH2iKjptzNOPISfT14XV9uDVVA7JdZHegSuozhPFCbomWiqIBuibbLq2B+dTiYLUDmPPTFbyuyxItdFueg==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\BobMarley\\BobMarley.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,10 @@
     "C:\\Users\\arthu\\.nuget\\packages\\dapper\\2.1.21\\dapper.2.1.21.nupkg.sha512",
     "C:\\Users\\arthu\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
     "C:\\Users\\arthu\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
+    "C:\\Users\\arthu\\.nuget\\packages\\hangfire.aspnetcore\\1.8.7\\hangfire.aspnetcore.1.8.7.nupkg.sha512",
+    "C:\\Users\\arthu\\.nuget\\packages\\hangfire.core\\1.8.7\\hangfire.core.1.8.7.nupkg.sha512",
+    "C:\\Users\\arthu\\.nuget\\packages\\hangfire.memorystorage\\1.8.0\\hangfire.memorystorage.1.8.0.nupkg.sha512",
+    "C:\\Users\\arthu\\.nuget\\packages\\hangfire.netcore\\1.8.7\\hangfire.netcore.1.8.7.nupkg.sha512",
     "C:\\Users\\arthu\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.10\\microsoft.aspnetcore.jsonpatch.7.0.10.nupkg.sha512",
     "C:\\Users\\arthu\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.10\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.10.nupkg.sha512",
     "C:\\Users\\arthu\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
