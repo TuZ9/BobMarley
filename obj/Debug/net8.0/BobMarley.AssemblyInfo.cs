@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BobMarley")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+443aa78a1df7eb62727bd152c3e6dadf82bc79a8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b1d652bce6d76e3a8a828ba8055e717b13c1db7")]
 [assembly: System.Reflection.AssemblyProductAttribute("BobMarley")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BobMarley")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
