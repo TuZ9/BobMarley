@@ -1,5 +1,4 @@
-﻿
-using BobMarley.Domain.Entities;
+﻿using BobMarley.Domain.Entities.Secondary;
 
 namespace BobMarley.Domain.Entities
 {

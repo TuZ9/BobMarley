@@ -1,4 +1,6 @@
 ﻿
+using BobMarley.Domain.Entities.Secondary;
+
 namespace BobMarley.Domain.Entities
 {
     public class Flower

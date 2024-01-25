@@ -1,5 +1,4 @@
-﻿
-namespace BobMarley.Domain.Entities
+﻿namespace BobMarley.Domain.Entities.Secondary
 {
     public class Brand
     {

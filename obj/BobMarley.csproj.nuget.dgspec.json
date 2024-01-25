@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitHub\\BobMarley\\BobMarley.csproj": {}
+    "C:\\Github\\BobMarley\\BobMarley.csproj": {}
   },
   "projects": {
-    "C:\\GitHub\\BobMarley\\BobMarley.csproj": {
+    "C:\\Github\\BobMarley\\BobMarley.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\BobMarley\\BobMarley.csproj",
+        "projectUniqueName": "C:\\Github\\BobMarley\\BobMarley.csproj",
         "projectName": "BobMarley",
-        "projectPath": "C:\\GitHub\\BobMarley\\BobMarley.csproj",
+        "projectPath": "C:\\Github\\BobMarley\\BobMarley.csproj",
         "packagesPath": "C:\\Users\\arthu\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\BobMarley\\obj\\",
+        "outputPath": "C:\\Github\\BobMarley\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\arthu\\AppData\\Roaming\\NuGet\\NuGet.Config",
