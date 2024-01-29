@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
 
 namespace BobMarley.Application.Static
@@ -8,6 +7,7 @@ namespace BobMarley.Application.Static
     {
         public static string? Auroraconnection = "";
         public static string? Mongoconnection = "";
+        public static string? CannabisEndpoint = "";
 
         public static void SetConfigs(ConfigurationManager configuration)
         {
