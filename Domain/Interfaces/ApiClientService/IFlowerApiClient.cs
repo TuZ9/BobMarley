@@ -2,7 +2,7 @@
 
 namespace BobMarley.Domain.Interfaces.ApiClientService
 {
-    public interface IFlowerApiClient : IServiceClientBase<Flower>
+    public interface IFlowerApiClient : IServiceClientBase<FlowerDto>
     {
 
     }

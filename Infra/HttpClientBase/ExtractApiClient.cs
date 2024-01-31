@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace BobMarley.Infra.HttpClientBase
 {
-    public class ExtractApiClient : ServiceClientBase<Extract, ExtractApiClient>, IExtractApiClient
+    public class ExtractApiClient : ServiceClientBase<ExtractDto, ExtractApiClient>, IExtractApiClient
     {
         public ExtractApiClient(HttpClient httpClient, ILogger<ExtractApiClient> logger) : base(httpClient, logger)
         {

@@ -2,7 +2,7 @@
 
 namespace BobMarley.Domain.Interfaces.ApiClientService
 {
-    internal interface IExtractApiClient : IServiceClientBase<Extract>
+    internal interface IExtractApiClient : IServiceClientBase<ExtractDto>
     {
     }
 }

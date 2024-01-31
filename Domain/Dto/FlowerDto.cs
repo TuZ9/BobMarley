@@ -1,15 +1,15 @@
 ﻿using BobMarley.Domain.Entities.Secondary;
 
-namespace BobMarley.Domain.Entities
+namespace BobMarley.Domain.Dto
 {
-    public class Extract
+    public class FlowerDto
     {
         public string name { get; set; }
-        public Guid ocpc { get; set; }
+        public Guid idFlower { get; set; }
         public Brand brand { get; set; }
         public string type { get; set; }
-        public Strain strain { get; set; }
-        public string description { get; set; }
+        public StrainDto train { get; set; }
+        public object description { get; set; }
         public string qr { get; set; }
         public string url { get; set; }
         public string image { get; set; }
