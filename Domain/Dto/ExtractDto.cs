@@ -4,19 +4,19 @@ namespace BobMarley.Domain.Dto
 {
     public class ExtractDto
     {
-        public string name { get; set; }
-        public Guid ocpc { get; set; }
-        public Brand brand { get; set; }
-        public string type { get; set; }
-        public StrainDto strain { get; set; }
-        public string description { get; set; }
-        public string qr { get; set; }
-        public string url { get; set; }
-        public string image { get; set; }
-        public bool labTest { get; set; }
-        public bool thc { get; set; }
-        public bool cbd { get; set; }
-        public string createdAt { get; set; }
-        public string updatedAt { get; set; }
+        public string? Name { get; set; }
+        public Guid IdExtract { get; set; }
+        public Brand? Brand { get; set; }
+        public string? Type { get; set; }
+        public StrainDto? Strain { get; set; }
+        public object? Description { get; set; }
+        public string? Qr { get; set; }
+        public string? Url { get; set; }
+        public string? Image { get; set; }
+        public bool LabTest { get; set; }
+        public bool Thc { get; set; }
+        public bool Cbd { get; set; }
+        public string? CreatedAt { get; set; }
+        public string? UpdatedAt { get; set; }
     }
 }

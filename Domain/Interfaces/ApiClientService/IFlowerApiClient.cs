@@ -1,4 +1,4 @@
-﻿using BobMarley.Domain.Entities;
+﻿using BobMarley.Domain.Dto;
 
 namespace BobMarley.Domain.Interfaces.ApiClientService
 {

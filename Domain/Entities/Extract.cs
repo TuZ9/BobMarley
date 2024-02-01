@@ -1,14 +1,13 @@
-﻿using BobMarley.Domain.Entities.Secondary;
-
-namespace BobMarley.Domain.Dto
+﻿
+namespace BobMarley.Domain.Entities
 {
-    public class FlowerDto
+    public class Extract
     {
         public string Name { get; set; }
-        public Guid IdFlower { get; set; }
-        public Brand Brand { get; set; }
+        public Guid IdExtract { get; set; }
+        public Guid IdBrand { get; set; }
         public string Type { get; set; }
-        public StrainDto Strain { get; set; }
+        public Guid IdStrain { get; set; }
         public object Description { get; set; }
         public string Qr { get; set; }
         public string Url { get; set; }

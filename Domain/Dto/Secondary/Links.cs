@@ -2,6 +2,6 @@
 {
     public class Links
     {
-        public string next { get; set; }
+        public string? Next { get; set; }
     }
 }

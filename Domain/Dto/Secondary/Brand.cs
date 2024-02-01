@@ -2,7 +2,7 @@
 {
     public class Brand
     {
-        public string name { get; set; }
-        public string ocpc { get; set; }
+        public string? Name { get; set; }
+        public Guid? idBrand { get; set; }
     }
 }

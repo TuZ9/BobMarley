@@ -1,4 +1,5 @@
 ﻿using BobMarley.Application.Services;
+using BobMarley.Domain.Dto;
 using BobMarley.Domain.Entities;
 using BobMarley.Domain.Interfaces.ApiClientService;
 using Microsoft.Extensions.Logging;

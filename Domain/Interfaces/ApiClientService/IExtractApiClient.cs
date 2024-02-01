@@ -1,8 +1,8 @@
-﻿using BobMarley.Domain.Entities;
+﻿using BobMarley.Domain.Dto;
 
 namespace BobMarley.Domain.Interfaces.ApiClientService
 {
-    internal interface IExtractApiClient : IServiceClientBase<ExtractDto>
+    public interface IExtractApiClient : IServiceClientBase<ExtractDto>
     {
     }
 }

@@ -1,7 +1,6 @@
-﻿
-namespace BobMarley.Domain.Dto
+﻿namespace BobMarley.Domain.Entities
 {
-    public class StrainDto
+    public class Strain
     {
         public string Name { get; set; }
         public Guid IdStrain { get; set; }
