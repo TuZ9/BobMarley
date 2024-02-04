@@ -1,13 +1,16 @@
 ﻿using BobMarley.Domain.Entities;
 using BobMarley.Domain.Interfaces.Repositories;
 using BobMarley.Infra.Context;
+using Dapper;
 
 namespace BobMarley.Infra.Repositories
 {
-    public class FlowerRepository : AuroraRepository<Flower>, IFlowerRepository
+    public class FlowerRepository : IFlowerRepository
     {
-        public FlowerRepository(AuroraDbContext context) : base(context)
+        private readonly AuroraDbContext _context;
+        public FlowerRepository(AuroraDbContext context)
         {
+            _context = context;
         }
 
         public async Task DeleteFlower(Flower flower)
@@ -16,24 +19,47 @@ namespace BobMarley.Infra.Repositories
             {
                 using (var connection = _context.CreateConnection())
                 {
-
+                    var query = "";
+                    var result = await connection.QueryAsync<Flower>(query, param: new { });
                 }
             }
             catch (Exception ex)
             {
 
             }
-            throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Flower>> GetFlower()
+        public async Task<IEnumerable<Flower>> GetFlower()
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var connection = _context.CreateConnection())
+                {
+                    var query = "";
+                    var result = await connection.QueryAsync<Flower>(query, param: new { });
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
-        public Task InsertFlower(IEnumerable<Flower> flower)
+        public async Task InsertFlower(IEnumerable<Flower> flower)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var connection = _context.CreateConnection())
+                {
+                    var query = "";
+                    var result = await connection.QueryAsync<Flower>(query, param: new { });
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public Task UpdateFlower(IEnumerable<Flower> flower)
