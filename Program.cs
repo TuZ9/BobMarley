@@ -1,4 +1,5 @@
 ﻿using BobMarley.Application.Static;
+using BobMarley.Infra.Extensions;
 using BobMarley.Infra.Ioc.Hangfire;
 using BobMarley.Infra.Ioc.Serilog;
 using BobMarley.Infra.Ioc.Swagger;
@@ -49,6 +50,8 @@ else
         IgnoreAntiforgeryToken = true
     });
 }
+var serviceProvider = builder.Services.BuildServiceProvider();
+HangireJobs.RunHangFireJob(serviceProvider);
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseHttpsRedirection();
