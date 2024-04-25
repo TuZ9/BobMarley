@@ -5,11 +5,11 @@ namespace BobMarley.Infra.Extensions
 {
     public static class HangireJobs
     {
-        public static void RunHangFireJob(ServiceProvider services, ConfigurationManager configuration)
+        public static async void RunHangFireJob(ServiceProvider services)
         {
-            RunJobs(services, configuration);
+            await RunJobs(services);
         }
-        public static void RunJobs(ServiceProvider services, ConfigurationManager configuration)
+        public static async Task RunJobs(ServiceProvider services)
         {
 
         }

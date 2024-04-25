@@ -25,7 +25,7 @@ namespace BobMarley.Infra.Repositories
         {
         }
 
-        public async Task<TEntity?> GetAsync(string query, object? param = null)
+        public async Task<TEntity> GetAsync(string query, object? param = null)
         {
             using (var con = _context.CreateConnection())
             {
@@ -34,7 +34,7 @@ namespace BobMarley.Infra.Repositories
             }
         }
 
-        public async Task<IEnumerable<TEntity?>> GetListAsync(string query, object? param = null)
+        public async Task<IEnumerable<TEntity>> GetListAsync(string query, object? param = null)
         {
             using (var con = _context.CreateConnection())
             {
