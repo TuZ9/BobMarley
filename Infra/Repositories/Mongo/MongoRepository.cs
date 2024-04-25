@@ -3,7 +3,7 @@ using BobMarley.Infra.Context;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 
-namespace BobMarley.Infra.Repositories
+namespace BobMarley.Infra.Repositories.Mongo
 {
     public abstract class MongoRepository<TEntity, YEntity> : IMongoRepository<TEntity> where TEntity : class where YEntity : class, IDisposable
     {
