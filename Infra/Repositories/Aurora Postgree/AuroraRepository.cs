@@ -2,7 +2,7 @@
 using BobMarley.Infra.Context;
 using Dapper;
 
-namespace BobMarley.Infra.Repositories.Aurora_Postgree
+namespace BobMarley.Infra.Repositories
 {
     public class AuroraRepository<TEntity> : IDisposable, IAuroraRepository<TEntity> where TEntity : class
     {
