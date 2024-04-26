@@ -1,24 +1,21 @@
-﻿using Npgsql;
-using System;
-using System.Collections.Generic;
+﻿using BobMarley.Application.Static;
+using Npgsql;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BobMarley.Infra.Context
 {
-    public class AuroraDbContext
+    public class AuroraDbContext : IDisposable
     {
-        public readonly string _connectionString;
 
-        public AuroraDbContext(string connectionString)
+        public AuroraDbContext()
         {
-            _connectionString = connectionString;
         }
 
         public IDbConnection CreateConnection()
-            => new NpgsqlConnection(_connectionString);
+            => new NpgsqlConnection(RunTimeConfig.Auroraconnection);
 
+        public void Dispose()
+        {
+        }
     }
 }
