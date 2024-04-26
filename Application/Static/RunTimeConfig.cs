@@ -5,7 +5,7 @@ namespace BobMarley.Application.Static
 {
     public static class RunTimeConfig
     {
-        public static string Auroraconnection = "";
+        public static string? Auroraconnection = "";
         public static string? Mongoconnection = "";
         public static string CannabisEndpoint = "";
 

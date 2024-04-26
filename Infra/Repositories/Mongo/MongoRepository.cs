@@ -74,6 +74,7 @@ namespace BobMarley.Infra.Repositories.Mongo
             }
         }
 
+        [Obsolete]
         public async Task CreateIndexAsync(string fieldName)
         {
             try

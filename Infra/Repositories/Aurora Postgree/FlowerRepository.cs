@@ -3,7 +3,7 @@ using BobMarley.Domain.Interfaces.Repositories;
 using BobMarley.Infra.Context;
 using Microsoft.Extensions.Logging;
 
-namespace BobMarley.Infra.Repositories
+namespace BobMarley.Infra.Repositories.Aurora_Postgree
 {
     public class FlowerRepository : AuroraRepository<Flower>, IFlowerRepository
     {
@@ -20,6 +20,7 @@ namespace BobMarley.Infra.Repositories
                 var query = @"DELETE FROM public.Flower AS tgt
                               USING SOURCE_TABLE AS src
                               WHERE tgt.id_flower=src.id_flower;";
+                await DeleteAsync(query);
             }
             catch (Exception ex)
             {
