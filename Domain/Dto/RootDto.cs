@@ -4,8 +4,8 @@ namespace BobMarley.Domain.Dto
 {
     public class RootDto
     {
-        public List<object> data { get; set; }
-        public Meta meta { get; set; }
+        public List<object>? data { get; set; }
+        public Meta? meta { get; set; }
     }
 }
 

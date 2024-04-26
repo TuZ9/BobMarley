@@ -48,8 +48,7 @@ namespace BobMarley.Application.Services
                 {
                     var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
 
-                    var result = JsonSerializer.Deserialize<TEntity>(contentStream);
-                    return result;
+                    return JsonSerializer.Deserialize<TEntity>(contentStream); 
                 }
                 return null;
             }
