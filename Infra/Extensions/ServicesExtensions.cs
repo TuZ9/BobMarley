@@ -21,7 +21,8 @@ namespace BobMarley.Infra.Extensions
         {
             return services
                 .AddScoped(_ => new AuroraDbContext())
-                .AddScoped<IFlowerRepository, FlowerRepository>();
+                .AddScoped<IFlowerRepository, FlowerRepository>()
+                .AddScoped<IStrainRepository, StrainRepository>();
         }
     }
 }

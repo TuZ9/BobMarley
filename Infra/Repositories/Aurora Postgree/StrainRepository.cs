@@ -5,10 +5,10 @@ using Microsoft.Extensions.Logging;
 
 namespace BobMarley.Infra.Repositories
 {
-    public class StrainRepository : AuroraRepository<Flower>, IStrainRepository
+    public class StrainRepository : AuroraRepository<Strain>, IStrainRepository
     {
-        private readonly ILogger<FlowerRepository> _logger;
-        public StrainRepository(AuroraDbContext context, ILogger<FlowerRepository> logger) : base(context)
+        private readonly ILogger<StrainRepository> _logger;
+        public StrainRepository(AuroraDbContext context, ILogger<StrainRepository> logger) : base(context)
         {
             _logger = logger;
         }

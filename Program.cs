@@ -19,7 +19,7 @@ RunTimeConfig.SetConfigs(builder.Configuration);
 builder.Services.AddMemoryCache();
 builder.Services.AddHealthChecks();
 builder.Services.AddControllers();
-builder.Services.AddHttpClients()
+builder.Services.AddHttpClients();
 builder.Services.AddServices();
 builder.Services.AddCors(options => options.AddPolicy("All", opt => opt
                         .AllowAnyHeader()
