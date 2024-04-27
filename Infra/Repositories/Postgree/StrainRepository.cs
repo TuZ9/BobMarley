@@ -3,7 +3,7 @@ using BobMarley.Domain.Interfaces.Repositories;
 using BobMarley.Infra.Context;
 using Microsoft.Extensions.Logging;
 
-namespace BobMarley.Infra.Repositories
+namespace BobMarley.Infra.Repositories.Postgree
 {
     public class StrainRepository : AuroraRepository<Strain>, IStrainRepository
     {

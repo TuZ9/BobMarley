@@ -5,9 +5,9 @@ namespace BobMarley.Application.Static
 {
     public static class RunTimeConfig
     {
-        public static string? Auroraconnection = "";
+        public static string? Auroraconnection = "host=localhost;Database=postgres;username=postgres;password=1234;";
         public static string? Mongoconnection = "";
-        public static string CannabisEndpoint = "";
+        public static string CannabisEndpoint = "https://api.otreeba.com/";
 
         public static void SetConfigs(ConfigurationManager configuration)
         {

@@ -7,7 +7,7 @@ namespace BobMarley.Infra.HttpClientBase
 {
     public class StrainApiClient : ServiceClientBase<StrainDto, StrainApiClient>, IStrainApiClient
     {
-        public StrainApiClient(HttpClient httpClient, ILogger<StrainApiClient> logger) : base(httpClient, logger)
+        public StrainApiClient(IHttpClientFactory clientFactory, ILogger<StrainApiClient> logger, string clientName) : base(clientFactory, logger, clientName)
         {
         }
     }

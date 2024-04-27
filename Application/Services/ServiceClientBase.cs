@@ -6,14 +6,14 @@ using System.Text.Json;
 
 namespace BobMarley.Application.Services
 {
-    public abstract class ServiceClientBase<TEntity, YEntity> : IServiceClientBase<TEntity> where TEntity : class where YEntity : class
+    public abstract class ServiceClientBase<TEntity, TYEntity> : IServiceClientBase<TEntity> where TEntity : class where TYEntity : class
     {
-        protected readonly HttpClient _httpClient;
-        protected readonly ILogger<YEntity> _logger;
+        private readonly HttpClient _httpClient;
+        private readonly ILogger<TYEntity> _logger;
 
-        protected ServiceClientBase(HttpClient httpClient, ILogger<YEntity> logger)
+        protected ServiceClientBase(IHttpClientFactory clientFactory, ILogger<TYEntity> logger, string clientName)
         {
-            _httpClient = httpClient;
+            _httpClient = clientFactory.CreateClient(clientName);
             _logger = logger;
         }
         public async Task DeleteAsync(string url)
