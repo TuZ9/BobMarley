@@ -15,9 +15,12 @@ SerilogExtension.AddSerilog(builder.Configuration);
 SwaggerConfiguration.AddSwagger(builder.Services);
 RunTimeConfig.SetConfigs(builder.Configuration);
 
+
 builder.Services.AddMemoryCache();
 builder.Services.AddHealthChecks();
 builder.Services.AddControllers();
+builder.Services.AddHttpClients();
+builder.Services.AddServices();
 builder.Services.AddCors(options => options.AddPolicy("All", opt => opt
                         .AllowAnyHeader()
                         .AllowAnyMethod()
@@ -51,8 +54,17 @@ else
 }
 var serviceProvider = builder.Services.BuildServiceProvider();
 HangireJobs.RunHangFireJob(serviceProvider);
+
 app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("../swagger/v1/swagger.json", "v1");
+    c.RoutePrefix = string.Empty;
+});
+app.UseDeveloperExceptionPage();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseAuthentication();

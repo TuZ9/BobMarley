@@ -1,5 +1,4 @@
-﻿using BobMarley.Application.Static;
-using BobMarley.Domain.Interfaces.Repositories;
+﻿using BobMarley.Domain.Interfaces.Repositories;
 using BobMarley.Infra.Context;
 using BobMarley.Infra.Repositories;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +21,8 @@ namespace BobMarley.Infra.Extensions
         {
             return services
                 .AddScoped(_ => new AuroraDbContext())
-                .AddScoped<IFlowerRepository, FlowerRepository>();
+                .AddScoped<IFlowerRepository, FlowerRepository>()
+                .AddScoped<IStrainRepository, StrainRepository>();
         }
     }
 }
