@@ -31,11 +31,6 @@ namespace BobMarley.Infra.Extensions
             services.AddSingleton<IExtractApiClient, ExtractApiClient>(x =>
                 new ExtractApiClient(x.GetService<IHttpClientFactory>()!, extractLogger, "Extract"));
 
-            //services.AddSingleton(services.AddHttpClient<IFlowerApiClient, FlowerApiClient>(_ => _.BaseAddress = new Uri(RunTimeConfig.CannabisEndpoint)));
-            //services.AddSingleton(services.AddHttpClient<IStrainApiClient, StrainApiClient>(_ => _.BaseAddress = new Uri(RunTimeConfig.CannabisEndpoint)));
-            //services.AddSingleton(services.AddHttpClient<IExtractApiClient, ExtractApiClient>(_ => _.BaseAddress = new Uri(RunTimeConfig.CannabisEndpoint)));
-
-
             return services;
         }
     }

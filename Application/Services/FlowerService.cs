@@ -47,6 +47,7 @@ namespace BobMarley.Application.Services
             }
             catch (Exception ex)
             {
+                _logger.LogError("Error Message {0}",ex.Message);
                 throw;
             }
         }

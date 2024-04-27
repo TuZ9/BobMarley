@@ -4,7 +4,7 @@ namespace BobMarley.Domain.Dto.Root
 {
     public class RootStrain
     {
-        public List<FlowerDto> data { get; set; }
-        public Meta meta { get; set; }
+        public required List<FlowerDto> Data { get; set; }
+        public Meta? Meta { get; set; }
     }
 }
