@@ -36,7 +36,7 @@ namespace BobMarley.Application.Services
             }
         }
 
-        public async Task<TEntity?> GetAsync(string url)
+        public async Task<TEntity> GetAsync(string url)
         {
             try
             {

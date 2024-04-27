@@ -25,23 +25,23 @@ namespace BobMarley.Application.Services
         {
             try
             {
-                var http = new HttpClient();
+                //var http = new HttpClient();
 
-                var httpResponseMessage = await http.GetAsync("https://api.otreeba.com/v1/flowers?count=1000");
+                //var httpResponseMessage = await http.GetAsync("https://api.otreeba.com/v1/flowers?count=1000");
 
-                //var resultw = JsonSerializer.Deserialize<Root>(contentStream);
+                ////var resultw = JsonSerializer.Deserialize<Root>(contentStream);
 
-                if (httpResponseMessage.IsSuccessStatusCode)
-                {
-                    var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
+                //if (httpResponseMessage.IsSuccessStatusCode)
+                //{
+                //    var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
 
-                    var result = JsonSerializer.Deserialize<RootFlower>(contentStream);
+                //    var result = JsonSerializer.Deserialize<RootFlower>(contentStream);
 
-                    var s = result;
-                    //return result;
-                }
+                //    var s = result;
+                //    //return result;
+                //}
 
-                var flowers = await _flowerApiClient.GetListAsync($"v1/flowers?count=1000");
+                var flowers = await _flowerApiClient.GetAsync($"v1/flowers?count=1000");
 
                 var a = flowers;
             }
