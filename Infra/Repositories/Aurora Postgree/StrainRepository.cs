@@ -5,15 +5,15 @@ using Microsoft.Extensions.Logging;
 
 namespace BobMarley.Infra.Repositories
 {
-    public class FlowerRepository : AuroraRepository<Flower>, IFlowerRepository
+    public class StrainRepository : AuroraRepository<Flower>, IStrainRepository
     {
         private readonly ILogger<FlowerRepository> _logger;
-        public FlowerRepository(AuroraDbContext context, ILogger<FlowerRepository> logger) : base(context)
+        public StrainRepository(AuroraDbContext context, ILogger<FlowerRepository> logger) : base(context)
         {
             _logger = logger;
         }
 
-        public async Task Delete(Flower flower)
+        public async Task Delete(Strain flower)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace BobMarley.Infra.Repositories
             }
         }
 
-        public async Task<IEnumerable<Flower>> Get()
+        public async Task<IEnumerable<Strain>> GetStrain()
         {
             try
             {
@@ -46,7 +46,7 @@ namespace BobMarley.Infra.Repositories
             }
         }
 
-        public async Task Insert(IEnumerable<Flower> flower)
+        public async Task Insert(IEnumerable<Strain> flower)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace BobMarley.Infra.Repositories
             }
         }
 
-        public async Task Update(IEnumerable<Flower> flower)
+        public async Task Update(IEnumerable<Strain> flower)
         {
             try
             {

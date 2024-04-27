@@ -1,7 +1,6 @@
 ﻿using BobMarley.Application.Static;
 using BobMarley.Domain.Interfaces.ApiClientService;
 using BobMarley.Infra.HttpClientBase;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BobMarley.Infra.Extensions
