@@ -3,17 +3,17 @@ using BobMarley.Domain.Interfaces.Repositories;
 using BobMarley.Infra.Context;
 using Microsoft.Extensions.Logging;
 
-namespace BobMarley.Infra.Repositories
+namespace BobMarley.Infra.Repositories.Postgree
 {
-    public class FlowerRepository : AuroraRepository<Flower>, IFlowerRepository
+    public class StrainRepository : AuroraRepository<Strain>, IStrainRepository
     {
-        private readonly ILogger<FlowerRepository> _logger;
-        public FlowerRepository(AuroraDbContext context, ILogger<FlowerRepository> logger) : base(context)
+        private readonly ILogger<StrainRepository> _logger;
+        public StrainRepository(AuroraDbContext context, ILogger<StrainRepository> logger) : base(context)
         {
             _logger = logger;
         }
 
-        public async Task DeleteFlower(Flower flower)
+        public async Task Delete(Strain flower)
         {
             try
             {
@@ -24,12 +24,12 @@ namespace BobMarley.Infra.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogError("Erro ao Deletar Flower: {0}", ex.Message);
+                _logger.LogError("Error ao Deletar Flower: {0}", ex.Message);
                 throw;
             }
         }
 
-        public async Task<IEnumerable<Flower>> GetFlower()
+        public async Task<IEnumerable<Strain>> GetStrain()
         {
             try
             {
@@ -46,7 +46,7 @@ namespace BobMarley.Infra.Repositories
             }
         }
 
-        public async Task InsertFlower(IEnumerable<Flower> flower)
+        public async Task Insert(IEnumerable<Strain> flower)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace BobMarley.Infra.Repositories
             }
         }
 
-        public async Task UpdateFlower(IEnumerable<Flower> flower)
+        public async Task Update(IEnumerable<Strain> flower)
         {
             try
             {

@@ -1,7 +1,8 @@
-﻿using BobMarley.Application.Static;
+﻿using BobMarley.Application.Services;
 using BobMarley.Domain.Interfaces.Repositories;
+using BobMarley.Domain.Interfaces.Services;
 using BobMarley.Infra.Context;
-using BobMarley.Infra.Repositories;
+using BobMarley.Infra.Repositories.Postgree;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BobMarley.Infra.Extensions
@@ -16,13 +17,15 @@ namespace BobMarley.Infra.Extensions
         }
         private static IServiceCollection RegisterServices(this IServiceCollection services)
         {
-            return services;
+            return services
+                .AddScoped<IFlowerService, FlowerService>();
         }
         private static IServiceCollection RegisterRepositories(this IServiceCollection services)
         {
             return services
                 .AddScoped(_ => new AuroraDbContext())
-                .AddScoped<IFlowerRepository, FlowerRepository>();
+                .AddScoped<IFlowerRepository, FlowerRepository>()
+                .AddScoped<IStrainRepository, StrainRepository>();
         }
     }
 }

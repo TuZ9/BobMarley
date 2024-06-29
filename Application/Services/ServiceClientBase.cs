@@ -1,19 +1,21 @@
 ﻿using BobMarley.Domain.Interfaces.ApiClientService;
 using Microsoft.Extensions.Logging;
+using SharpCompress.Compressors.Xz;
+using System.IO;
 using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
 
 namespace BobMarley.Application.Services
 {
-    public abstract class ServiceClientBase<TEntity, YEntity> : IServiceClientBase<TEntity> where TEntity : class where YEntity : class
+    public abstract class ServiceClientBase<TEntity, TYEntity> : IServiceClientBase<TEntity> where TEntity : class where TYEntity : class
     {
-        protected readonly HttpClient _httpClient;
-        protected readonly ILogger<YEntity> _logger;
+        private readonly HttpClient _httpClient;
+        private readonly ILogger<TYEntity> _logger;
 
-        protected ServiceClientBase(HttpClient httpClient, ILogger<YEntity> logger)
+        protected ServiceClientBase(IHttpClientFactory clientFactory, ILogger<TYEntity> logger, string clientName)
         {
-            _httpClient = httpClient;
+            _httpClient = clientFactory.CreateClient(clientName);
             _logger = logger;
         }
         public async Task DeleteAsync(string url)
@@ -36,7 +38,7 @@ namespace BobMarley.Application.Services
             }
         }
 
-        public async Task<TEntity?> GetAsync(string url)
+        public async Task<TEntity> GetAsync(string url)
         {
             try
             {
@@ -47,8 +49,8 @@ namespace BobMarley.Application.Services
                 if (httpResponseMessage.IsSuccessStatusCode)
                 {
                     var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
-
-                    return JsonSerializer.Deserialize<TEntity>(contentStream); 
+                    var result = JsonSerializer.Deserialize<TEntity>(contentStream); 
+                    return result;
                 }
                 return null;
             }

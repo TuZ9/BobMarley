@@ -7,7 +7,7 @@ namespace BobMarley.Infra.HttpClientBase
 {
     public class ExtractApiClient : ServiceClientBase<ExtractDto, ExtractApiClient>, IExtractApiClient
     {
-        public ExtractApiClient(HttpClient httpClient, ILogger<ExtractApiClient> logger) : base(httpClient, logger)
+        public ExtractApiClient(IHttpClientFactory clientFactory, ILogger<ExtractApiClient> logger, string clientName) : base(clientFactory, logger, clientName)
         {
         }
     }
