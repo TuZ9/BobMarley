@@ -1,5 +1,7 @@
 ﻿using BobMarley.Domain.Interfaces.ApiClientService;
 using Microsoft.Extensions.Logging;
+using SharpCompress.Compressors.Xz;
+using System.IO;
 using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
@@ -47,8 +49,8 @@ namespace BobMarley.Application.Services
                 if (httpResponseMessage.IsSuccessStatusCode)
                 {
                     var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
-
-                    return JsonSerializer.Deserialize<TEntity>(contentStream); 
+                    var result = JsonSerializer.Deserialize<TEntity>(contentStream); 
+                    return result;
                 }
                 return null;
             }

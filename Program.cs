@@ -1,25 +1,27 @@
 ﻿using BobMarley.Application.Static;
 using BobMarley.Infra.Extensions;
 using BobMarley.Infra.Ioc.Hangfire;
-using BobMarley.Infra.Ioc.Serilog;
+using BobMarley.Infra.Ioc.HealthCheck;
 using BobMarley.Infra.Ioc.Swagger;
 using Hangfire;
 using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
-using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
-SerilogExtension.AddSerilog(builder.Configuration);
+//SerilogExtension.AddSerilog(builder.Configuration);
 SwaggerConfiguration.AddSwagger(builder.Services);
 RunTimeConfig.SetConfigs(builder.Configuration);
 
-builder.Logging.ClearProviders();
+//builder.Logging.ClearProviders();
 builder.Services.AddMemoryCache();
-builder.Services.AddHealthChecks();
+builder.Services.AddDistributedMemoryCache();
 builder.Services.AddControllers();
+builder.Services.AddHealthChecks();
+builder.Services.AddHealthCheck(builder.Configuration);
 builder.Services.AddHttpClients();
 builder.Services.AddServices();
 builder.Services.AddCors(options => options.AddPolicy("All", opt => opt
@@ -62,7 +64,7 @@ app.UseSwaggerUI(c =>
     c.SwaggerEndpoint("../swagger/v1/swagger.json", "v1");
     c.RoutePrefix = string.Empty;
 });
-app.UseDeveloperExceptionPage();
+//app.UseDeveloperExceptionPage();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
