@@ -5,7 +5,7 @@ namespace BobMarley.Application.Static
 {
     public static class RunTimeConfig
     {
-        public static string? Auroraconnection = "host=localhost;Database=postgres;username=postgres;password=1234;";
+        public static string? Auroraconnection;
         public static string? Mongoconnection = "";
         public static string CannabisEndpoint = "https://api.otreeba.com/";
 
@@ -13,7 +13,7 @@ namespace BobMarley.Application.Static
         {
             if (Debugger.IsAttached)
             {
-                Auroraconnection = configuration.GetConnectionString("Auroraconnection");
+                Auroraconnection = "host=localhost;Database=postgres;username=postgres;password=1234;";
                 Mongoconnection = configuration.GetConnectionString("Mongoconnection");
             }
             else
