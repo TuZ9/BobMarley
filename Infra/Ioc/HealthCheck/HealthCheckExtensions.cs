@@ -15,14 +15,13 @@ namespace BobMarley.Infra.Ioc.HealthCheck
         public static IServiceCollection AddHealthCheck(this IServiceCollection services, IConfiguration configuration)
         {
             var provider = services.BuildServiceProvider();
-            var postgresOrdersConn = RunTimeConfig.Auroraconnection;
             //var endpoints = provider.GetService<IOptions<EnpointIndexOption>>().Value;
             //var endpointsCollateral = provider.GetService<IOptions<EndpointCollateralSummaryOption>>().Value;
             //var rabbitSettings = provider.GetService<IOptions<MassTransitSettingsOption>>().Value;
 
             services
                 .AddHealthChecks()
-                .AddNpgSql(postgresOrdersConn, tags: ["postgres"]);
+                .AddNpgSql(RunTimeConfig.Auroraconnection, tags: ["postgres"]);
                 //.AddUrlGroup(new Uri(endpoints.KatherineJohnsonEndPoint + "health"), name: "Katherine_Jhonson", tags: new[] { "kj" })
                 //.AddUrlGroup(new Uri(endpoints.CalendarEndPoint + "health"), name: "Calendar", tags: new[] { "calendar" })
                 //.AddUrlGroup(new Uri(endpoints.FalloutShelterEndPoint + "health"), name: "Fallout Shelter", tags: new[] { "fallout" })
