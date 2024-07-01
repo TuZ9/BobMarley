@@ -27,4 +27,8 @@
     <PackageReference Include="MongoDB.Driver" Version="2.26.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Infra\Mappers\" />
+  </ItemGroup>
+
 </Project>

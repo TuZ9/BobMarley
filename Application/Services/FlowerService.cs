@@ -2,14 +2,7 @@
 using BobMarley.Domain.Interfaces.Repositories;
 using BobMarley.Domain.Interfaces.Services;
 using Microsoft.Extensions.Logging;
-using System.Text.Json;
-using BobMarley.Domain.Entities;
-using static Dapper.SqlMapper;
-using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
-using BobMarley.Domain.Dto.Root;
-using Amazon;
 using BobMarley.Domain.Dto;
-using System.Collections.Generic;
 
 namespace BobMarley.Application.Services
 {

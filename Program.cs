@@ -60,7 +60,7 @@ else
     });
 }
 var serviceProvider = builder.Services.BuildServiceProvider();
-//HangireJobs.RunHangFireJob(serviceProvider);
+HangireJobs.RunHangFireJob(serviceProvider);
 
 app.UseSwagger();
 app.UseSwaggerUI(c =>
@@ -87,7 +87,7 @@ app.UseHealthChecks("/env", new HealthCheckOptions
         await context.Response.WriteAsync(result);
     }
 });
-//app.UseDeveloperExceptionPage();
+
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

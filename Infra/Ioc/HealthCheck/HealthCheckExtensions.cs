@@ -21,7 +21,7 @@ namespace BobMarley.Infra.Ioc.HealthCheck
 
             services
                 .AddHealthChecks()
-                .AddNpgSql(RunTimeConfig.Auroraconnection, tags: ["postgres"]);
+                .AddNpgSql(connectionString: RunTimeConfig.Auroraconnection, tags: ["postgres"]);
                 //.AddUrlGroup(new Uri(endpoints.KatherineJohnsonEndPoint + "health"), name: "Katherine_Jhonson", tags: new[] { "kj" })
                 //.AddUrlGroup(new Uri(endpoints.CalendarEndPoint + "health"), name: "Calendar", tags: new[] { "calendar" })
                 //.AddUrlGroup(new Uri(endpoints.FalloutShelterEndPoint + "health"), name: "Fallout Shelter", tags: new[] { "fallout" })
