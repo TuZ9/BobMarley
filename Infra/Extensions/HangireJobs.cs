@@ -1,5 +1,4 @@
 ﻿using BobMarley.Domain.Interfaces.Services;
-using Hangfire;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BobMarley.Infra.Extensions
@@ -14,7 +13,8 @@ namespace BobMarley.Infra.Extensions
         {
             using var scope = services.CreateScope();
             var service = scope.ServiceProvider.GetRequiredService<IFlowerService>();
-            var jobId = BackgroundJob.Enqueue(() => service.BuildBase());
+            await service.RunGpt();
+            //BackgroundJob.Enqueue(() => service.BuildBase());
         }
     }
 }

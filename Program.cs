@@ -59,8 +59,6 @@ else
         IgnoreAntiforgeryToken = true
     });
 }
-var serviceProvider = builder.Services.BuildServiceProvider();
-HangireJobs.RunHangFireJob(serviceProvider);
 
 app.UseSwagger();
 app.UseSwaggerUI(c =>
@@ -68,6 +66,7 @@ app.UseSwaggerUI(c =>
     c.SwaggerEndpoint("../swagger/v1/swagger.json", "v1");
     c.RoutePrefix = string.Empty;
 });
+
 app.UseHealthChecks("/env", new HealthCheckOptions
 {
     ResultStatusCodes =
@@ -88,13 +87,13 @@ app.UseHealthChecks("/env", new HealthCheckOptions
     }
 });
 
+var serviceProvider = builder.Services.BuildServiceProvider();
+HangireJobs.RunHangFireJob(serviceProvider);
+
 app.UseRouting();
 app.UseAuthentication();
-app.UseAuthorization();
 app.UseHttpsRedirection();
 app.UseAuthorization();
-app.UseAuthentication();
-app.UseRouting();
 app.UseCors("All");
 app.MapHealthChecks();
 app.MapControllers();
