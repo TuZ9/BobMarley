@@ -3,11 +3,11 @@ namespace BobMarley.Domain.Entities
 {
     public class Flower
     {
-        public string? Name { get; set; }
         public Guid IdFlower { get; set; }
         public Guid IdBrand { get; set; }
-        public string? Type { get; set; }
         public Guid IdStrain { get; set; }
+        public string? Name { get; set; }        
+        public string? Type { get; set; }        
         public object? Description { get; set; }
         public string? Qr { get; set; }
         public string? Url { get; set; }

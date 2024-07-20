@@ -7,6 +7,8 @@ using OpenAI_API;
 using OpenAI_API.Chat;
 using OpenAI_API.Models;
 using static OpenAI_API.Chat.ChatMessage;
+using AutoMapper;
+using BobMarley.Domain.Entities;
 
 namespace BobMarley.Application.Services
 {
@@ -15,11 +17,13 @@ namespace BobMarley.Application.Services
         private readonly ILogger<FlowerService> _logger;
         private readonly IFlowerRepository _flowerRepository;
         private readonly IFlowerApiClient _flowerApiClient;
-        public FlowerService(ILogger<FlowerService> logger, IFlowerRepository flowerRepository, IFlowerApiClient flowerApiClient)
+        private readonly IMapper _mapper;
+        public FlowerService(ILogger<FlowerService> logger, IFlowerRepository flowerRepository, IFlowerApiClient flowerApiClient, IMapper mapper)
         {
             _logger = logger;
             _flowerRepository = flowerRepository;
             _flowerApiClient = flowerApiClient;
+            _mapper = mapper;
         }
         public async Task BuildBase()
         {
@@ -30,8 +34,10 @@ namespace BobMarley.Application.Services
                 {
                     var flowers = await _flowerApiClient.GetAsync($"/v1/flowers?page={i}&count=50");
                     if (flowers.data.Count != 0 || flowers != null)
-                    {
+                    {                        
                         lisfFlower.AddRange(flowers.data);
+                        var f = _mapper.ProjectTo<Flower>(lisfFlower.AsQueryable());
+                        var a = 0;
                         //Mapp para Entities
                         //tratar Query de insert
                         //inserir 

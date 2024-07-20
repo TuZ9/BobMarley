@@ -13,7 +13,7 @@ namespace BobMarley.Infra.Extensions
         {
             using var scope = services.CreateScope();
             var service = scope.ServiceProvider.GetRequiredService<IFlowerService>();
-            await service.RunGpt();
+            await service.BuildBase();
             //BackgroundJob.Enqueue(() => service.BuildBase());
         }
     }

@@ -1,4 +1,5 @@
-﻿using BobMarley.Application.Static;
+﻿using BobMarley.Application.AutoMapper;
+using BobMarley.Application.Static;
 using BobMarley.Infra.Extensions;
 using BobMarley.Infra.Ioc.Hangfire;
 using BobMarley.Infra.Ioc.HealthCheck;
@@ -28,6 +29,7 @@ builder.Services.AddHealthChecks();
 builder.Services.AddHealthCheck(builder.Configuration);
 builder.Services.AddHttpClients();
 builder.Services.AddServices();
+builder.Services.AddAutoMapper(typeof(EntityToDtoMapper), typeof(DtoToEnityMapper));
 builder.Services.AddCors(options => options.AddPolicy("All", opt => opt
                         .AllowAnyHeader()
                         .AllowAnyMethod()
