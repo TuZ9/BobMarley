@@ -18,7 +18,7 @@ using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
-SerilogExtension.AddSerilog(builder.Configuration);
+//SerilogExtension.AddSerilog(builder.Configuration);
 SwaggerConfiguration.AddSwagger(builder.Services);
 RunTimeConfig.SetConfigs(builder.Configuration);
 

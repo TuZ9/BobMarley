@@ -3,6 +3,7 @@ namespace BobMarley.Domain.Entities
 {
     public class Flower
     {
+        public Flower() { IdFlower = Guid.NewGuid(); }
         public Guid IdFlower { get; set; }
         public Guid IdBrand { get; set; }
         public Guid IdStrain { get; set; }

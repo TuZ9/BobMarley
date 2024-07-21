@@ -29,19 +29,17 @@ namespace BobMarley.Application.Services
         {
             try
             {
-                var lisfFlower = new List<FlowerDto>();
-                for (int i = 0; i <= 101; i++)
+                _logger.LogInformation("Inicia job Flower");
+                Console.WriteLine("Inicia job Flower");
+                for (int i = 60; i <= 102; i++)
                 {
+                    Console.WriteLine($"{i.ToString()}");
                     var flowers = await _flowerApiClient.GetAsync($"/v1/flowers?page={i}&count=50");
                     if (flowers.data.Count != 0 || flowers != null)
                     {                        
-                        lisfFlower.AddRange(flowers.data);
-                        var f = _mapper.ProjectTo<Flower>(lisfFlower.AsQueryable());
-                        var a = 0;
-                        //Mapp para Entities
-                        //tratar Query de insert
-                        //inserir 
-                        //limpar lista
+                        var lisfFlower = new List<FlowerDto>(flowers.data);
+                        await _flowerRepository.Insert(_mapper.ProjectTo<Flower>(lisfFlower.AsQueryable()));
+                        lisfFlower.Clear();
                     }
                 }
             }

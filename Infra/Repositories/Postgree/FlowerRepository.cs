@@ -50,9 +50,9 @@ namespace BobMarley.Infra.Repositories.Postgree
         {
             try
             {
-                var query = @"INSERT INTO public.Flower
-                              (name, type, description, qr, url, image, labtest, thc, cbd, createdat, updatedat, id_brand, id_strain, id_flower)
-                              VALUES('', '', '', '', '', '', false, false, false, '', '', ?, ?, ?);";
+                var query = @"INSERT INTO public.tb_flower
+                            (name, id_brand, id_flower, type, description, qr, url, image, lab_test, thc, cdb, created_at, updated_at)
+                            VALUES(@Name, @IdBrand, @IdFlower, @Type, @Description, @Qr, @Url, @Image, @LabTest, @Thc, @Cbd, @CreatedAt, @UpdatedAt);";
 
                 await InsertAsync(query, flower);
             }
