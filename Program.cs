@@ -3,7 +3,6 @@ using BobMarley.Application.Static;
 using BobMarley.Infra.Extensions;
 using BobMarley.Infra.Ioc.Hangfire;
 using BobMarley.Infra.Ioc.HealthCheck;
-using BobMarley.Infra.Ioc.Serilog;
 using BobMarley.Infra.Ioc.Swagger;
 using Hangfire;
 using Hangfire.MemoryStorage;
@@ -20,7 +19,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //SerilogExtension.AddSerilog(builder.Configuration);
 SwaggerConfiguration.AddSwagger(builder.Services);
-RunTimeConfig.SetConfigs(builder.Configuration);
+RunTimeConfig.SetConfigs (builder.Configuration);
 
 builder.Services.AddMemoryCache();
 builder.Services.AddDistributedMemoryCache();

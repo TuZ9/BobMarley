@@ -31,7 +31,7 @@ namespace BobMarley.Application.Services
             {
                 _logger.LogInformation("Inicia job Flower");
                 Console.WriteLine("Inicia job Flower");
-                for (int i = 60; i <= 102; i++)
+                for (int i = 0; i <= 102; i++)
                 {
                     Console.WriteLine($"{i.ToString()}");
                     var flowers = await _flowerApiClient.GetAsync($"/v1/flowers?page={i}&count=50");
