@@ -123,7 +123,7 @@ namespace BobMarley.Application.Services
             // the entire chat history is available in chat.Messages
             foreach (ChatMessage msg in chat.Messages)
             {
-                Console.WriteLine($"{msg.Role}: {msg.Content}");
+                //Console.WriteLine($"{msg.Role}: {msg.Content}");
             }
 
 

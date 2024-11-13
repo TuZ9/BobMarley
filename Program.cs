@@ -28,7 +28,7 @@ builder.Services.AddHealthChecks();
 builder.Services.AddHealthCheck(builder.Configuration);
 builder.Services.AddHttpClients();
 builder.Services.AddServices();
-builder.Services.AddAutoMapper(typeof(EntityToDtoMapper), typeof(DtoToEnityMapper));
+//builder.Services.AddAutoMapper(typeof(EntityToDtoMapper), typeof(DtoToEnityMapper));
 builder.Services.AddCors(options => options.AddPolicy("All", opt => opt
                         .AllowAnyHeader()
                         .AllowAnyMethod()
