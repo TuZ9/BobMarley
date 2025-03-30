@@ -5,6 +5,7 @@ using BobMarley.Infra.Ioc.Hangfire;
 using BobMarley.Infra.Ioc.HealthCheck;
 using BobMarley.Infra.Ioc.Swagger;
 using Hangfire;
+using AutoMapper;
 using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -28,7 +29,7 @@ builder.Services.AddHealthChecks();
 builder.Services.AddHealthCheck(builder.Configuration);
 builder.Services.AddHttpClients();
 builder.Services.AddServices();
-//builder.Services.AddAutoMapper(typeof(EntityToDtoMapper), typeof(DtoToEnityMapper));
+builder.Services.AddAutoMapper(typeof(EntityToDtoMapper), typeof(DtoToEnityMapper));
 builder.Services.AddCors(options => options.AddPolicy("All", opt => opt
                         .AllowAnyHeader()
                         .AllowAnyMethod()
